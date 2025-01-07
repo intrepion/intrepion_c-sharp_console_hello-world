@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intrepion.HelloWorld.ConsoleProject", "Intrepion.HelloWorld.ConsoleProject\Intrepion.HelloWorld.ConsoleProject.csproj", "{21E76FCB-CE6F-45D3-AF13-EF6A4B027F01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intrepion.HelloWorld.ConsoleProject.UnitTests", "Intrepion.HelloWorld.ConsoleProject.UnitTests\Intrepion.HelloWorld.ConsoleProject.UnitTests.csproj", "{3B09F893-006D-4C18-ADD6-E7E61C9B470D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21E76FCB-CE6F-45D3-AF13-EF6A4B027F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21E76FCB-CE6F-45D3-AF13-EF6A4B027F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21E76FCB-CE6F-45D3-AF13-EF6A4B027F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21E76FCB-CE6F-45D3-AF13-EF6A4B027F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B09F893-006D-4C18-ADD6-E7E61C9B470D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B09F893-006D-4C18-ADD6-E7E61C9B470D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B09F893-006D-4C18-ADD6-E7E61C9B470D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B09F893-006D-4C18-ADD6-E7E61C9B470D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
