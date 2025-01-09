@@ -4,8 +4,15 @@ namespace Intrepion.HelloWorld.ConsoleProject.UnitTests;
 
 public class GreetingService_GreetingShould
 {
+    private const string ConsoleTest = "ConsoleTest";
+
     [Test]
+    [NotInParallel(ConsoleTest)]
     [Arguments("Alice")]
+    [Arguments("     Alice       ")]
+    [Arguments("  Alice \n ")]
+    [Arguments("    Alice \r  ")]
+    [Arguments("\t\t\tAlice\t\t\t")]
     public async Task BeHelloAlice_GivenAlice(string alice)
     {
         // Arrange
