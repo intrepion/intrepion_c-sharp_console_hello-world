@@ -55,4 +55,29 @@ public class GreetingService_GreetingShould
         // Assert
         await Assert.That(lines[1]).IsEqualTo(expected);
     }
+
+    [Test]
+    [NotInParallel(ConsoleTest)]
+    [Arguments("")]
+    [Arguments(" ")]
+    [Arguments("\n")]
+    [Arguments("\r")]
+    [Arguments("\t")]
+    public async Task BeHelloWorld_GivenNothing(string? nothing)
+    {
+        // Arrange
+        var expected = "Hello, world!";
+        var writer = new StringWriter();
+        Console.SetOut(writer);
+        var textReader = new StringReader(nothing);
+        Console.SetIn(textReader);
+
+        // Act
+        Greeter.GetName();
+        var stringBuilder = writer.GetStringBuilder();
+        var lines = stringBuilder.ToString().Split(Environment.NewLine, StringSplitOptions.TrimEntries);
+
+        // Assert
+        await Assert.That(lines[1]).IsEqualTo(expected);
+    }
 }
