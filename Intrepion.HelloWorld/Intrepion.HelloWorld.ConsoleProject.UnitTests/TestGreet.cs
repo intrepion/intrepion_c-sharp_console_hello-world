@@ -5,13 +5,14 @@ namespace Intrepion.HelloWorld.ConsoleProject.UnitTests;
 public class GreetingService_GreetingShould
 {
     [Test]
-    public async Task BeHelloAlice_GivenAlice()
+    [Arguments("Alice")]
+    public async Task BeHelloAlice_GivenAlice(string alice)
     {
         // Arrange
         var expected = "Hello, Alice!";
         var writer = new StringWriter();
         Console.SetOut(writer);
-        var textReader = new StringReader("Alice");
+        var textReader = new StringReader(alice);
         Console.SetIn(textReader);
 
         // Act
