@@ -63,13 +63,39 @@ public class GreetingService_GreetingShould
     [Arguments("\n")]
     [Arguments("\r")]
     [Arguments("\t")]
-    public async Task BeHelloWorld_GivenNothing(string? nothing)
+    public async Task BeHelloWorld_GivenNothing(string nothing)
     {
         // Arrange
         var expected = "Hello, world!";
         var writer = new StringWriter();
         Console.SetOut(writer);
         var textReader = new StringReader(nothing);
+        Console.SetIn(textReader);
+
+        // Act
+        Greeter.GetName();
+        var stringBuilder = writer.GetStringBuilder();
+        var lines = stringBuilder.ToString().Split(Environment.NewLine, StringSplitOptions.TrimEntries);
+
+        // Assert
+        await Assert.That(lines[1]).IsEqualTo(expected);
+    }
+
+    [Test]
+    [NotInParallel(ConsoleTest)]
+    [Arguments("mary jane", "Hello, mary jane!")]
+    [Arguments("O'Connor", "Hello, O'Connor!")]
+    [Arguments("María", "Hello, María!")]
+    [Arguments("    多田野数人    ", "Hello, 多田野数人!")]
+    [Arguments("Smith-Jones", "Hello, Smith-Jones!")]
+    [Arguments("  First   Last  ", "Hello, First   Last!")]
+    [Arguments("😀", "Hello, 😀!")]
+    public async Task BeHelloSpecial_GivenSpecial(string special, string expected)
+    {
+        // Arrange
+        var writer = new StringWriter();
+        Console.SetOut(writer);
+        var textReader = new StringReader(special);
         Console.SetIn(textReader);
 
         // Act
